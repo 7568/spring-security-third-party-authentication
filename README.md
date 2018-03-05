@@ -5,11 +5,9 @@ spring security 使用第三方登陆，其实就是使用的security的权限�
 
 整个流程是：
 
-		> 用户访问本网站，被sso拦截，跳转到sso的登陆界面，在sso登陆成功，将登信息写入到redis中，然后再返回到本网站。
-
-> 到本网站之后，又到sso拦截器，sso发现已经登陆，就将用户信息获取，存到session中去。
-
-> sso拦截器走完之后又到自定义的security拦截器，他的作用就是将session中的数据保存到security中去，然后页面上就可以获取到，并判断用户是否有权限了。
+* 用户访问本网站，被sso拦截，跳转到sso的登陆界面，在sso登陆成功，将登信息写入到redis中，然后再返回到本网站。
+* 到本网站之后，又到sso拦截器，sso发现已经登陆，就将用户信息获取，存到session中去。
+* sso拦截器走完之后又到自定义的security拦截器，他的作用就是将session中的数据保存到security中去，然后页面上就可以获取到，并判断用户是否有权限了。
 
 整个项目结构如下：
 
@@ -21,12 +19,12 @@ spring security 使用第三方登陆，其实就是使用的security的权限�
 
 配置文件：
 
-![](images/Screen Shot 2018-03-05 at 9.42.32 AM.png)
+![](images/F0BCC06E-E4AC-4BB3-B24F-3A19C621A4B9.png)
 
 自定义的security拦截器：
 
-![](images/Screen Shot 2018-03-05 at 9.45.39 AM.png)
+![](images/F0BCC06E-E4AC-4BB3-B24F-3A19C621A4BA.png)
 
 测试界面：
 
-![](images/Screen Shot 2018-03-05 at 9.46.35 AM.png)
+![](images/F0BCC06E-E4AC-4BB3-B24F-3A19C621A4BB.png)
